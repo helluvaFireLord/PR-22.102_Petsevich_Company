@@ -1,0 +1,63 @@
+﻿<Window x:Class="PR_22._102_Petsevich_Company.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PR_22._102_Petsevich_Company"
+        mc:Ignorable="d"
+        Title="Управление производством"
+        Height="600" Width="1000"
+        WindowStartupLocation="CenterScreen">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="448*"/>
+            <RowDefinition Height="137*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="220"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Background="Black" Grid.Column="0" Grid.RowSpan="2">
+            <TextBlock Text="Меню" TextAlignment="Center"
+               Foreground="White"
+               FontSize="16"
+               Margin="10"/>
+
+            <Button Content="Материалы"
+            Margin="10"
+            Height="40"
+            Click="Materials_Click"/>
+
+            <Button Content="Продукция"
+            Margin="10"
+            Height="40"
+            Click="Products_Click"/>
+
+            <Button Content="Поставки"
+            Margin="10"
+            Height="40"
+            Click="Purchases_Click"/>
+
+            <Button Content="Склад"
+            Margin="10"
+            Height="40"
+            Click="Stock_Click"/>
+
+            <Button Content="Заказы"
+            Margin="10"
+            Height="40"
+            Click="Orders_Click"/>
+
+            <Button Content="Сотрудники/Оборудование"
+            Margin="10"
+            Height="40"
+            Click="EmployeesEquipment_Click"/>
+        </StackPanel>
+
+        <Frame x:Name="MainFrame"
+               Grid.Column="1"
+               NavigationUIVisibility="Hidden" Grid.RowSpan="2"/>
+    </Grid>
+</Window>

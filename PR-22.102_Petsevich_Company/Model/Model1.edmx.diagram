@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="6a472edd7916419381359dbea29dee99" Name="Diagram1">
+        <EntityTypeShape EntityType="CompanyDBModel.BillOfMaterials" Width="1.5" PointX="3" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="CompanyDBModel.Clients" Width="1.5" PointX="3.75" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CompanyDBModel.Departament" Width="1.5" PointX="3.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CompanyDBModel.Employees" Width="1.5" PointX="6" PointY="15.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CompanyDBModel.Equipments" Width="1.5" PointX="6" PointY="19.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CompanyDBModel.Materials" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CompanyDBModel.MaterialStocks" Width="1.5" PointX="3" PointY="22.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CompanyDBModel.OrderAssignments" Width="1.5" PointX="8.25" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CompanyDBModel.Positions" Width="1.5" PointX="3.75" PointY="17.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CompanyDBModel.ProductionOrder" Width="1.5" PointX="6" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CompanyDBModel.Products" Width="1.5" PointX="0.75" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="CompanyDBModel.Purchase" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CompanyDBModel.StatusesOfEquipment" Width="1.5" PointX="3.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CompanyDBModel.StatusesOfOrder" Width="1.5" PointX="3.75" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CompanyDBModel.Suppliers" Width="1.5" PointX="0.75" PointY="14.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CompanyDBModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CompanyDBModel.Units" Width="1.5" PointX="1.5" PointY="12.375" IsExpanded="true" />
+        <AssociationConnector Association="CompanyDBModel.FK_BOM_Material" ManuallyRouted="false" />
+        <AssociationConnector Association="CompanyDBModel.FK_BOM_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="CompanyDBModel.FK_ProductionOrder_Client" ManuallyRouted="false" />
+        <AssociationConnector Association="CompanyDBModel.FK_Employees_Department" ManuallyRouted="false" />
+        <AssociationConnector Association="CompanyDBModel.FK_Employees_Position" ManuallyRouted="false" />
+        <AssociationConnector Association="CompanyDBModel.FK_OrderAssignments_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="CompanyDBModel.FK_Equipments_Status" ManuallyRouted="false" />
+        <AssociationConnector Association="CompanyDBModel.FK_OrderAssignments_Equipment" ManuallyRouted="false" />
+        <AssociationConnector Association="CompanyDBModel.FK_Materials_Units" ManuallyRouted="false" />
+        <AssociationConnector Association="CompanyDBModel.FK_MaterialStocks_Material" ManuallyRouted="false" />
+        <AssociationConnector Association="CompanyDBModel.FK_Purchase_Material" ManuallyRouted="false" />
+        <AssociationConnector Association="CompanyDBModel.FK_OrderAssignments_Order" ManuallyRouted="false" />
+        <AssociationConnector Association="CompanyDBModel.FK_ProductionOrder_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="CompanyDBModel.FK_ProductionOrder_Status" ManuallyRouted="false" />
+        <AssociationConnector Association="CompanyDBModel.FK_Purchase_Supplier" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

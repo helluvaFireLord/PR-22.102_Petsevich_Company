@@ -1,0 +1,159 @@
+﻿<Page x:Class="PR_22._102_Petsevich_Company.Pages.EmployeesEquipmentPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:PR_22._102_Petsevich_Company.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Сотрудники и оборудование">
+
+    <Grid Margin="10">
+        <TabControl>
+            <TabItem Header="Сотрудники">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <GroupBox x:Name="EmployeeGroup" Header="Добавление сотрудника" Margin="0 0 0 10">
+                        <StackPanel Orientation="Vertical" Margin="10">
+                            <StackPanel Orientation="Horizontal" Margin="0 5">
+                                <StackPanel>
+                                    <TextBlock Text="Фамилия"/>
+                                    <TextBox x:Name="SurnameBox" Width="100"/>
+                                </StackPanel>
+
+                                <StackPanel Margin="10 0">
+                                    <TextBlock Text="Имя"/>
+                                    <TextBox x:Name="NameBox" Width="100"/>
+                                </StackPanel>
+
+                                <StackPanel Margin="10 0">
+                                    <TextBlock Text="Отчество"/>
+                                    <TextBox x:Name="MiddleNameBox" Width="100"/>
+                                </StackPanel>
+
+                                <StackPanel Margin="10 0">
+                                    <TextBlock Text="Должность"/>
+                                    <ComboBox x:Name="PositionBox" Width="120" DisplayMemberPath="Name"/>
+                                </StackPanel>
+
+                                <StackPanel Margin="10 0">
+                                    <TextBlock Text="Отдел"/>
+                                    <ComboBox x:Name="DepartmentBox" Width="120" DisplayMemberPath="Name"/>
+                                </StackPanel>
+
+                                <StackPanel Margin="10 0">
+                                    <TextBlock Text="Ставка"/>
+                                    <TextBox x:Name="SalaryBox" Width="80"/>
+                                </StackPanel>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal" Margin="0 10">
+                                <Button x:Name="SaveEmployee" Content="Сохранить" Width="100" Click="SaveEmployee_Click"/>
+                                <Button x:Name="DeleteEmployee" Content="Удалить" Width="100" Margin="10 0" Click="DeleteEmployee_Click" IsEnabled="False"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </GroupBox>
+
+                    <DataGrid x:Name="EmployeesGrid" Grid.Row="1" AutoGenerateColumns="False" SelectionMode="Single" IsReadOnly="True" SelectionChanged="EmployeesGrid_SelectionChanged">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Фамилия" Binding="{Binding Surname}"/>
+                            <DataGridTextColumn Header="Имя" Binding="{Binding Name}"/>
+                            <DataGridTextColumn Header="Отчество" Binding="{Binding MiddleName}"/>
+                            <DataGridTextColumn Header="Должность" Binding="{Binding Positions.Name}"/>
+                            <DataGridTextColumn Header="Отдел" Binding="{Binding Departament.Name}"/>
+                            <DataGridTextColumn Header="Ставка" Binding="{Binding Salary}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Оборудование">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <GroupBox x:Name="EquipmentGroup" Header="Добавление оборудования" Margin="0 0 0 10">
+                        <StackPanel Orientation="Horizontal" Margin="10">
+                            <StackPanel>
+                                <TextBlock Text="Название"/>
+                                <TextBox x:Name="EquipmentNameBox" Width="150"/>
+                            </StackPanel>
+
+                            <StackPanel Margin="10 0">
+                                <TextBlock Text="Инв. номер"/>
+                                <TextBox x:Name="InventoryNumberBox" Width="100"/>
+                            </StackPanel>
+
+                            <StackPanel Margin="10 0">
+                                <TextBlock Text="Статус"/>
+                                <ComboBox x:Name="StatusBox" Width="120" DisplayMemberPath="Name"/>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal" Margin="10 0">
+                                <Button x:Name="SaveEquipment" Content="Сохранить" Width="100" Click="SaveEquipment_Click"/>
+                                <Button x:Name="DeleteEquipment" Content="Удалить" Width="100" Margin="10 0" Click="DeleteEquipment_Click" IsEnabled="False"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </GroupBox>
+
+                    <DataGrid x:Name="EquipmentsGrid" Grid.Row="1" AutoGenerateColumns="False" SelectionMode="Single" IsReadOnly="True" SelectionChanged="EquipmentsGrid_SelectionChanged">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Название" Binding="{Binding Name}"/>
+                            <DataGridTextColumn Header="Инв. номер" Binding="{Binding InventoryNumber}"/>
+                            <DataGridTextColumn Header="Статус" Binding="{Binding StatusesOfEquipment.Name}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+
+            <TabItem Header="Назначения">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="145*"/>
+                        <ColumnDefinition Width="628*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <GroupBox x:Name="AssignmentGroup" Header="Добавление назначения" Margin="0 0 0 10" Grid.ColumnSpan="2">
+                        <StackPanel Orientation="Horizontal" Margin="10">
+                            <StackPanel>
+                                <TextBlock Text="Заказ"/>
+                                <ComboBox x:Name="OrderBox" Width="150" DisplayMemberPath="OrderID"/>
+                            </StackPanel>
+
+                            <StackPanel Margin="10 0">
+                                <TextBlock Text="Сотрудник"/>
+                                <ComboBox x:Name="EmployeeAssignBox" Width="150" DisplayMemberPath="Surname"/>
+                            </StackPanel>
+
+                            <StackPanel Margin="10 0">
+                                <TextBlock Text="Оборудование"/>
+                                <ComboBox x:Name="EquipmentAssignBox" Width="150" DisplayMemberPath="Name"/>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal" Margin="10 0">
+                                <Button x:Name="SaveAssignment" Content="Сохранить" Width="100" Click="Assign_Click"/>
+                                <Button x:Name="DeleteAssignment" Content="Удалить" Width="100" Margin="10 0" Click="DeleteAssignment_Click" IsEnabled="False"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </GroupBox>
+
+                    <DataGrid x:Name="AssignmentsGrid" Grid.Row="1" AutoGenerateColumns="False" SelectionMode="Single" IsReadOnly="True" SelectionChanged="AssignmentsGrid_SelectionChanged" Grid.ColumnSpan="2">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Заказ" Binding="{Binding ProductionOrder.OrderID}"/>
+                            <DataGridTextColumn Header="Сотрудник" Binding="{Binding Employees.Surname}"/>
+                            <DataGridTextColumn Header="Оборудование" Binding="{Binding Equipments.Name}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Page>
